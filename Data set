@@ -1,0 +1,63 @@
+To "crack the market code" with AI-driven stock price prediction using time series analysis, you need a dataset with historical stock prices, typically including:
+
+Date
+
+Open
+
+High
+
+Low
+
+Close
+
+Volume
+
+
+Option 1: Real-time Dataset Using yfinance (Recommended)
+
+yfinance is a Python library to download real stock data from Yahoo Finance.
+
+Example:
+
+import yfinance as yf
+
+# Download data for Apple (AAPL)
+df = yf.download('AAPL', start='2015-01-01', end='2023-12-31')
+print(df.head())
+
+This will give you a DataFrame like:
+
+You can save it as a CSV for offline use:
+
+df.to_csv('AAPL_stock_data.csv')
+
+
+---
+
+Option 2: Download Datasets from Kaggle
+
+You can get public datasets from Kaggle:
+
+Historical Stock Market Dataset
+
+S&P 500 Historical Data
+
+
+You’ll need a Kaggle account and install the Kaggle CLI:
+
+pip install kaggle
+
+Then download like:
+
+kaggle datasets download -d borismarjanovic/price-volume-data-for-all-us-stocks-etfs
+
+
+---
+
+Which is Best?
+
+Use yfinance for always up-to-date real data with no download required.
+
+Use Kaggle datasets if you want large volumes of data or multiple tickers in one file.
+
+
